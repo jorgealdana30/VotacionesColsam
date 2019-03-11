@@ -1,28 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import firebase from 'firebase'
+  let config = {
+    apiKey: "AIzaSyCH8lsk4BnNEn4FWvlpXJDA5sTQzwXLS_c",
+    authDomain: "votacionescolsam.firebaseapp.com",
+    databaseURL: "https://votacionescolsam.firebaseio.com",
+    projectId: "votacionescolsam",
+    storageBucket: "",
+    messagingSenderId: "1035804809043"
+  };
+  firebase.initializeApp(config);
 
 export default {
   name: 'app',
-  components: {
-    HelloWorld
-  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
