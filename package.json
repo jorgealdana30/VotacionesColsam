@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "firebase": "^5.8.6",
-    "vue": "^2.6.6"
+    "vue": "^2.6.6",
+    "vuetify": "^1.5.5"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.5.0",
