@@ -13,9 +13,11 @@
                 <v-btn  flat class="white--text">Conteo de Votos</v-btn>
             </v-toolbar>
             <v-content>
-                <v-container fluid grid-list-md>
+
+                <v-container fluid grid-list-md >
                     <v-layout justify-center justify-space-around>
-                            <v-card width="350px">
+                        
+                            <v-card class="card-sombra" width="350px">
                                 <v-img class="white--text foto"
                                        src="https://firebasestorage.googleapis.com/v0/b/votacionescolsam.appspot.com/o/fotos%2F1.png?alt=media&token=deda4692-5e7f-43b0-adb4-25399a61f92e">
                                 </v-img>
@@ -26,10 +28,10 @@
                                     </div>
                                 </v-card-title>
                                 <v-card-actions>
-                                    <v-btn color="primary" @click="votoJanina" block large>VOTAR</v-btn>
+                                    <v-btn color="primary" :disabled="botonV" @click="votoJanina" block large>VOTAR</v-btn>
                                 </v-card-actions>
                             </v-card>
-                        <v-card width="350px">
+                        <v-card class="card-sombra" width="350px">
                             <v-img class="white--text foto"
                                    src="https://firebasestorage.googleapis.com/v0/b/votacionescolsam.appspot.com/o/fotos%2F3.png?alt=media&token=2bffe81b-2566-4c0b-a4c4-03e7288a65c7">
                             </v-img>
@@ -40,10 +42,10 @@
                                 </div>
                             </v-card-title>
                             <v-card-actions>
-                                <v-btn color="primary" @click="votoKevin" block large >VOTAR</v-btn>
+                                <v-btn color="primary" :disabled="botonV" @click="votoKevin" block large >VOTAR</v-btn>
                             </v-card-actions>
                         </v-card>
-                        <v-card width="350px">
+                        <v-card class="card-sombra" width="350px">
                             <v-img class="white--text foto"
                                    src="https://firebasestorage.googleapis.com/v0/b/votacionescolsam.appspot.com/o/fotos%2F2.png?alt=media&token=5e49df03-e517-44de-af62-b14deb181bf4">
                             </v-img>
@@ -54,11 +56,20 @@
                                 </div>
                             </v-card-title>
                             <v-card-actions>
-                                <v-btn color="primary" @click="votoDairo" block large >VOTAR</v-btn>
+                                <v-btn color="primary" :disabled="botonV" @click="votoDairo" block large >VOTAR</v-btn>
                             </v-card-actions>
                         </v-card>
+
+                        <v-dialog v-model="alertExito" persistent max-width="500px">
+                            <v-card>
+                                <v-card-title>
+                                    <span class="headline text-lg-center text-sm-center">¡Gracias por tu voto!</span>
+                                </v-card-title  >
+                            </v-card>
+                        </v-dialog>
                     </v-layout>
                 </v-container>
+
             </v-content>
         </v-app>
     </div>
@@ -80,26 +91,40 @@
     export default {
         name: 'app',
         data: () => ({
-
+            botonV: false,
+            alertExito: false
         }),
         methods: {
             votoJanina: function () {
                 let docRef = db.collection("personeros").doc('1001918552');
                 docRef.get().then(doc => {
                     docRef.update({nrovotos: doc.data().nrovotos + 1});
+                    this.botonV = true;
+                    this.alertExito = true;
+                    setTimeout(this.reinicioVoto, 5000);
                 });
             },
             votoDairo: function () {
                 let docRef = db.collection("personeros").doc('1002027132');
                 docRef.get().then(doc => {
                     docRef.update({nrovotos: doc.data().nrovotos + 1});
+                    this.botonV = true;
+                    this.alertExito = true;
+                    setTimeout(this.reinicioVoto, 5000);
                 });
             },
             votoKevin: function () {
                 let docRef = db.collection("personeros").doc('1002031194');
                 docRef.get().then(doc => {
                     docRef.update({nrovotos: doc.data().nrovotos + 1});
+                    this.botonV = true;
+                    this.alertExito = true;
+                    setTimeout(this.reinicioVoto, 5000);
                 });
+            },
+            reinicioVoto: function () {
+                this.botonV = false;
+                this.alertExito = false;
             }
         }
     }
