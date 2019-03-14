@@ -85,6 +85,15 @@
                                     <span class="headline">Ingresar panel de Administración</span>
                                 </v-card-title>
                                 <v-card-text>
+                                    <v-alert type="error" v-model="errorPass" dismissible>Por favor ingrese una contraseña
+                                        valida.
+                                    </v-alert>
+                                    <v-alert type="error" v-model="errorUser" dismissible>Por favor ingrese un usuario
+                                        valido.
+                                    </v-alert>
+                                    <v-alert type="error" v-model="errorLogin" dismissible>Usuario y/o contraseña
+                                        incorrecta.
+                                    </v-alert>
                                     <v-container grid-list-md>
                                         <v-layout wrap>
                                             <v-flex xs12>
@@ -128,10 +137,18 @@
         name: 'app',
         data: () => ({
             botonV: false,
+            exito: false,
             alertExito: false,
             inicio: false,
+            usuario: [],
             email: '',
-            pass: ''
+            pass: '',
+            errorUser: false,
+            errorPass: false,
+            errorLogin: false,
+            errorDB: false,
+
+
         }),
         methods: {
             votoJanina: function () {
@@ -175,14 +192,14 @@
                 this.alertExito = false;
             },
             login: function () {
-                if (this.user.length === 0) {
+                if (this.email.length === 0) {
                     this.errorUser = true;
                     this.errorPass = false;
                 } else if (this.pass.length === 0) {
                     this.errorPass = true;
                     this.errorUser = false;
                 } else {
-                    let f = firebase.auth().signInWithEmailAndPassword(this.user, this.pass).then(
+                    let f = firebase.auth().signInWithEmailAndPassword(this.email, this.pass).then(
                         function () {
                             return true;
                         },
@@ -193,12 +210,11 @@
                     f.then(res => {
                         if (res) {
                             this.usuario = firebase.auth().currentUser;
-                            localStorage.setItem('usuario', JSON.stringify(this.usuario));
                             this.exito = true;
                             this.errorLogin = false;
                             this.errorUser = false;
                             this.errorPass = false;
-                            this.user = '';
+                            this.email = '';
                             this.pass = '';
                             setInterval(this.redireccionar, 2000);
                             setTimeout("location.href = '/reporte.html'", 4000);
@@ -211,7 +227,6 @@
                 this.errorPass = false;
                 this.errorUser = false;
                 this.errorLogin = false;
-                this.redireccion = true;
             },
         }
     }
