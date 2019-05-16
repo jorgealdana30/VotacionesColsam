@@ -36,8 +36,20 @@
 <script>
     import VueApexCharts from 'vue-apexcharts';
     import Vue from 'vue'
+    import firebase from 'firebase'
+    let config = {
+        apiKey: "AIzaSyCH8lsk4BnNEn4FWvlpXJDA5sTQzwXLS_c",
+        authDomain: "votacionescolsam.firebaseapp.com",
+        databaseURL: "https://votacionescolsam.firebaseio.com",
+        projectId: "votacionescolsam",
+        storageBucket: "",
+        messagingSenderId: "1035804809043"
+    };
+    let app =firebase.initializeApp(config);
+    let db = firebase.firestore(app);
     Vue.component('apexchart',VueApexCharts);
     var colors = ['#008FFB', '#00E396', '#FEB019', '#FF4560', '#775DD0', '#546E7A', '#26a69a', '#D10CE8'];
+
     export default {
         name: "Reporte",
         components: {
@@ -50,8 +62,10 @@
                     data: []
                 }],
                 chartOptions: {
+                    animate: false,
                     chart: {
                         height: 350,
+                        animate: false,
                         type: 'bar',
                         events: {
                             click: function (chart, w, e) {
@@ -63,7 +77,8 @@
                     plotOptions: {
                         bar: {
                             columnWidth: '50%',
-                            distributed: true
+                            distributed: true,
+                            animate:false
                         }
                     },
                     dataLabels: {
@@ -82,13 +97,31 @@
             }
         },
         mounted(){
-
-            console.log(this.series);
-
+            this.transfer();
         },
-        computed: {
+        methods: {
+            transfer: function(){
+                setInterval(this.actualizar, 3000);
+            },
             actualizar: function () {
-                return [20, 13, 23, 29]
+                this.series[0].data=[];
+                let docRef = db.collection("personeros").doc("1001918552");
+                docRef.get().then(doc =>{
+                    this.series[0].data.push(doc.data().nrovotos);
+                });
+                let docRef1 = db.collection("personeros").doc("1002031194");
+                docRef1.get().then(doc =>{
+                    this.series[0].data.push(doc.data().nrovotos);
+                });
+                let docRef2 = db.collection("personeros").doc("1002027132");
+                docRef2.get().then(doc =>{
+                    this.series[0].data.push(doc.data().nrovotos);
+                });
+                let docRef3 = db.collection("personeros").doc("PskaWVZqqdhdUfMRbgvf");
+                docRef3.get().then(doc =>{
+                    this.series[0].data.push(doc.data().nrovotos);
+                });
+
             }
         }
     }
