@@ -50,7 +50,7 @@
                                     <v-card class="card-sombra" width="270px">
                                         <v-card-title>
                                             <div>
-                                                <h2>Ruleta</h2><br>
+                                                <h2>Ruleta Grupo #1</h2><br>
                                                 <span class="grey--text">Integrantes: <ul><li>Alvarez</li><li>Ramirez</li><li>Quintana</li><li>García</li></ul></span><br>
                                             </div>
                                         </v-card-title>
@@ -61,7 +61,7 @@
                                     <v-card class="card-sombra" width="270px">
                                         <v-card-title>
                                             <div>
-                                                <h2>Escalera y Serpiente</h2><br>
+                                                <h2>Escalera y Serpiente Grupo #2</h2><br>
                                                 <span class="grey--text">Integrantes:<ul><li>Peña</li><li>Berrio</li><li>Meza</li></ul></span><br>
                                             </div>
                                         </v-card-title>
@@ -69,52 +69,70 @@
                                             <v-btn color="primary" :disabled="botonV" @click="voto('escaleraserpiente')" block large>VOTAR</v-btn>
                                         </v-card-actions>
                                     </v-card>
-                                    <v-dialog v-model="alertExito" persistent max-width="500px">
-                                        <v-card>
-                                            <v-card-title>
-                                                <span class="headline text-lg-center text-sm-center">¡Gracias por tu voto!</span>
-                                            </v-card-title  >
-                                        </v-card>
-                                    </v-dialog>
-                                    <v-dialog v-model="inicio" persistent max-width="600px">
-                                        <v-card>
-                                            <v-card-title>
-                                                <span class="headline">Ingresar panel de Administración</span>
-                                            </v-card-title>
-                                            <v-card-text>
-                                                <v-alert type="error" v-model="errorPass" dismissible>Por favor ingrese una contraseña
-                                                    valida.
-                                                </v-alert>
-                                                <v-alert type="error" v-model="errorUser" dismissible>Por favor ingrese un usuario
-                                                    valido.
-                                                </v-alert>
-                                                <v-alert type="error" v-model="errorLogin" dismissible>Usuario y/o contraseña
-                                                    incorrecta.
-                                                </v-alert>
-                                                <v-container grid-list-md>
-                                                    <v-layout wrap>
-                                                        <v-flex xs12>
-                                                            <v-text-field label="Correo*" v-model="email" required></v-text-field>
-                                                        </v-flex>
-                                                        <v-flex xs12>
-                                                            <v-text-field label="Contraseña*" v-model="pass" type="password" required></v-text-field>
-                                                        </v-flex>
-                                                    </v-layout>
-                                                </v-container>
-                                                <small>*Campos requeridos</small>
-                                            </v-card-text>
-                                            <v-card-actions>
-                                                <v-spacer></v-spacer>
-                                                <v-btn color="blue darken-1" flat @click="inicio = false">Cerrar</v-btn>
-                                                <v-btn color="blue darken-1" flat @click="login">Entrar</v-btn>
-                                            </v-card-actions>
-                                        </v-card>
-                                    </v-dialog>
+
                                 </v-layout>
                             </v-container>
                         </v-tab-item>
                         <v-tab-item>
-                            hdhdfh
+                            <v-container fluid grid-list-md offset-sm3>
+                                <v-layout justify-center justify-space-around>
+                                    <v-card class="card-sombra" width="270px">
+                                        <v-card-title>
+                                            <div>
+                                                <h2>Brazo Hidráulico Grupo #3</h2><br>
+                                                <span class="grey--text">Integrantes: <ul><li>Teran</li><li>Montenegro</li><li>H. Jimenez</li></ul></span><br>
+                                            </div>
+                                        </v-card-title>
+                                        <v-card-actions>
+                                            <v-btn color="primary" :disabled="botonV" @click="voto('brazohidraulico')" block large>VOTAR</v-btn>
+                                        </v-card-actions>
+                                    </v-card>
+                                    <v-card class="card-sombra" width="270px">
+                                        <v-card-title>
+                                            <div>
+                                                <h2>Holograma 3D <br>Grupo #4</h2><br>
+                                                <span class="grey--text">Integrantes:<ul><li>Vera</li><li>Llanos</li><li>García</li></ul></span><br>
+                                            </div>
+                                        </v-card-title>
+                                        <v-card-actions>
+                                            <v-btn color="primary" :disabled="botonV" @click="voto('holograma3d')" block large>VOTAR</v-btn>
+                                        </v-card-actions>
+                                    </v-card>
+                                    <v-card class="card-sombra" width="270px">
+                                        <v-card-title>
+                                            <div>
+                                                <h2>Lámpara de lava <br>Grupo #5</h2><br>
+                                                <span class="grey--text">Integrantes:<ul><li>Santíz</li><li>Herrera</li></ul></span><br>
+                                            </div>
+                                        </v-card-title>
+                                        <v-card-actions>
+                                            <v-btn color="primary" :disabled="botonV" @click="voto('lamparadelava')" block large>VOTAR</v-btn>
+                                        </v-card-actions>
+                                    </v-card>
+                                    <v-card class="card-sombra" width="270px">
+                                        <v-card-title>
+                                            <div>
+                                                <h2>Moldeación de la materia <br>Grupo #6</h2><br>
+                                                <span class="grey--text">Integrantes:<ul><li>Pardo</li><li>Escobar</li><li>C. Acosta</li><li>Sampayo</li></ul></span><br>
+                                            </div>
+                                        </v-card-title>
+                                        <v-card-actions>
+                                            <v-btn color="primary" :disabled="botonV" @click="voto('lamparadelava')" block large>VOTAR</v-btn>
+                                        </v-card-actions>
+                                    </v-card>
+                                    <v-card class="card-sombra" width="270px">
+                                        <v-card-title>
+                                            <div>
+                                                <h2>Ver tu propia voz <br>Grupo #7</h2><br>
+                                                <span class="grey--text">Integrantes:<ul><li>Parra</li><li>Rivera</li><li>Ospino</li></ul></span><br>
+                                            </div>
+                                        </v-card-title>
+                                        <v-card-actions>
+                                            <v-btn color="primary" :disabled="botonV" @click="voto('propiavoz')" block large>VOTAR</v-btn>
+                                        </v-card-actions>
+                                    </v-card>
+                                </v-layout>
+                            </v-container>
                         </v-tab-item>
                         <v-tab-item>
                             jjjjj
@@ -128,6 +146,47 @@
 
 
             </v-content>
+            <v-dialog v-model="alertExito" persistent max-width="500px">
+                <v-card>
+                    <v-card-title>
+                        <span class="headline text-lg-center text-sm-center">¡Gracias por tu voto!</span>
+                    </v-card-title  >
+                </v-card>
+            </v-dialog>
+            <v-dialog v-model="inicio" persistent max-width="600px">
+                <v-card>
+                    <v-card-title>
+                        <span class="headline">Ingresar panel de Administración</span>
+                    </v-card-title>
+                    <v-card-text>
+                        <v-alert type="error" v-model="errorPass" dismissible>Por favor ingrese una contraseña
+                            valida.
+                        </v-alert>
+                        <v-alert type="error" v-model="errorUser" dismissible>Por favor ingrese un usuario
+                            valido.
+                        </v-alert>
+                        <v-alert type="error" v-model="errorLogin" dismissible>Usuario y/o contraseña
+                            incorrecta.
+                        </v-alert>
+                        <v-container grid-list-md>
+                            <v-layout wrap>
+                                <v-flex xs12>
+                                    <v-text-field label="Correo*" v-model="email" required></v-text-field>
+                                </v-flex>
+                                <v-flex xs12>
+                                    <v-text-field label="Contraseña*" v-model="pass" type="password" required></v-text-field>
+                                </v-flex>
+                            </v-layout>
+                        </v-container>
+                        <small>*Campos requeridos</small>
+                    </v-card-text>
+                    <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn color="blue darken-1" flat @click="inicio = false">Cerrar</v-btn>
+                        <v-btn color="blue darken-1" flat @click="login">Entrar</v-btn>
+                    </v-card-actions>
+                </v-card>
+            </v-dialog>
         </v-app>
     </div>
 </template>
@@ -255,8 +314,11 @@
 <style scoped>
     @import "assets/style.css";
     .pestana{
-        margin: 190px;
+        position: relative;
         background: white;
+        top: 20%;
+        margin-right: 50px;
+        margin-left: 50px;
     }
     .tabs{
         color: white!important;
