@@ -7,114 +7,126 @@
                            class="logo" height="66" width="54"></v-img>
                 </v-toolbar-title>
                 <v-toolbar-title class="white--text titulo">
-                    Votaciones Colsam 2019
+                    Triduo de la creatividad Colsam 2019
                 </v-toolbar-title>
                 <v-spacer></v-spacer>
                 <v-btn  flat class="white--text" @click="inicio = true">Conteo de Votos</v-btn>
             </v-toolbar>
             <v-content>
+                <v-tabs
+                        v-model="tab"
+                        color="white"
+                        background-color="deep-purple accent-4"
+                        class="elevation-2 pestana"
+                        :centered="centered"
+                        :grow="grow"
+                        :vertical="vertical"
+                        :right="right"
+                        :prev-icon="prevIcon ? 'mdi-arrow-left-bold-box-outline' : undefined"
+                        :next-icon="nextIcon ? 'mdi-arrow-right-bold-box-outline' : undefined"
+                        :icons-and-text="icons"
+                >
+                    <v-tabs-slider></v-tabs-slider>
+                    <v-tab class="tabs" >
+                       Septimo
+                        <v-icon v-if="icons">mdi-phone</v-icon>
+                    </v-tab>
+                    <v-tab class="tabs" >
+                        Octavo
+                        <v-icon v-if="icons">mdi-phone</v-icon>
+                    </v-tab>
+                    <v-tab class="tabs" >
+                        Noveno
+                        <v-icon v-if="icons">mdi-phone</v-icon>
+                    </v-tab>
+                    <v-tab class="tabs" >
+                        Decimo
+                        <v-icon v-if="icons">mdi-phone</v-icon>
+                    </v-tab>
+                    <v-tabs-items>
+                        <v-tab-item>
+                            <v-container fluid grid-list-md offset-sm3>
+                                <v-layout justify-center justify-space-around>
+                                    <v-card class="card-sombra" width="270px">
+                                        <v-card-title>
+                                            <div>
+                                                <h2>Ruleta</h2><br>
+                                                <span class="grey--text">Integrantes: <ul><li>Alvarez</li><li>Ramirez</li><li>Quintana</li><li>García</li></ul></span><br>
+                                            </div>
+                                        </v-card-title>
+                                        <v-card-actions>
+                                            <v-btn color="primary" :disabled="botonV" @click="voto('ruleta')" block large>VOTAR</v-btn>
+                                        </v-card-actions>
+                                    </v-card>
+                                    <v-card class="card-sombra" width="270px">
+                                        <v-card-title>
+                                            <div>
+                                                <h2>Escalera y Serpiente</h2><br>
+                                                <span class="grey--text">Integrantes:<ul><li>Peña</li><li>Berrio</li><li>Meza</li></ul></span><br>
+                                            </div>
+                                        </v-card-title>
+                                        <v-card-actions>
+                                            <v-btn color="primary" :disabled="botonV" @click="voto('escaleraserpiente')" block large>VOTAR</v-btn>
+                                        </v-card-actions>
+                                    </v-card>
+                                    <v-dialog v-model="alertExito" persistent max-width="500px">
+                                        <v-card>
+                                            <v-card-title>
+                                                <span class="headline text-lg-center text-sm-center">¡Gracias por tu voto!</span>
+                                            </v-card-title  >
+                                        </v-card>
+                                    </v-dialog>
+                                    <v-dialog v-model="inicio" persistent max-width="600px">
+                                        <v-card>
+                                            <v-card-title>
+                                                <span class="headline">Ingresar panel de Administración</span>
+                                            </v-card-title>
+                                            <v-card-text>
+                                                <v-alert type="error" v-model="errorPass" dismissible>Por favor ingrese una contraseña
+                                                    valida.
+                                                </v-alert>
+                                                <v-alert type="error" v-model="errorUser" dismissible>Por favor ingrese un usuario
+                                                    valido.
+                                                </v-alert>
+                                                <v-alert type="error" v-model="errorLogin" dismissible>Usuario y/o contraseña
+                                                    incorrecta.
+                                                </v-alert>
+                                                <v-container grid-list-md>
+                                                    <v-layout wrap>
+                                                        <v-flex xs12>
+                                                            <v-text-field label="Correo*" v-model="email" required></v-text-field>
+                                                        </v-flex>
+                                                        <v-flex xs12>
+                                                            <v-text-field label="Contraseña*" v-model="pass" type="password" required></v-text-field>
+                                                        </v-flex>
+                                                    </v-layout>
+                                                </v-container>
+                                                <small>*Campos requeridos</small>
+                                            </v-card-text>
+                                            <v-card-actions>
+                                                <v-spacer></v-spacer>
+                                                <v-btn color="blue darken-1" flat @click="inicio = false">Cerrar</v-btn>
+                                                <v-btn color="blue darken-1" flat @click="login">Entrar</v-btn>
+                                            </v-card-actions>
+                                        </v-card>
+                                    </v-dialog>
+                                </v-layout>
+                            </v-container>
+                        </v-tab-item>
+                        <v-tab-item>
+                            hdhdfh
+                        </v-tab-item>
+                        <v-tab-item>
+                            jjjjj
+                        </v-tab-item>
+                        <v-tab-item>
+                            hjfgjfgjfgjfgj
+                        </v-tab-item>
+                    </v-tabs-items>
 
-                <v-container fluid grid-list-md offset-sm3>
-                    <v-layout justify-center justify-space-around>
-                            <v-card class="card-sombra" width="270px">
-                                <v-img class="white--text foto"
-                                       src="https://firebasestorage.googleapis.com/v0/b/votacionescolsam.appspot.com/o/fotos%2F1.png?alt=media&token=901c29e1-7a64-426a-b5e1-b0ff21126492">
-                                </v-img>
-                                <v-card-title>
-                                    <div>
-                                        <span>Janinna Isabel Baza Arrieta</span><br>
-                                        <span class="grey--text">"Para viajar lejos no hay mejor nave que un libro"</span><br>
-                                    </div>
-                                </v-card-title>
-                                <v-card-actions>
-                                    <v-btn color="primary" :disabled="botonV" @click="votoJanina" block large>VOTAR</v-btn>
-                                </v-card-actions>
-                            </v-card>
-                        <v-card class="card-sombra" width="270px">
-                            <v-img class="white--text foto"
-                                   src="https://firebasestorage.googleapis.com/v0/b/votacionescolsam.appspot.com/o/fotos%2F3.png?alt=media&token=2bffe81b-2566-4c0b-a4c4-03e7288a65c7">
-                            </v-img>
-                            <v-card-title>
-                                <div>
-                                    <span>Kevin Sebastian Padilla Sarmiento</span><br>
-                                    <span class="grey--text">"Con Kevin al poder, nada que temer, con etica lograremos la victoria."</span><br>
-                                </div>
-                            </v-card-title>
-                            <v-card-actions>
-                                <v-btn color="primary" :disabled="botonV" @click="votoKevin" block large >VOTAR</v-btn>
-                            </v-card-actions>
-                        </v-card>
-                        <v-card class="card-sombra" width="270px">
-                            <v-img class="white--text foto"
-                                   src="https://firebasestorage.googleapis.com/v0/b/votacionescolsam.appspot.com/o/fotos%2F2.png?alt=media&token=5e49df03-e517-44de-af62-b14deb181bf4">
-                            </v-img>
-                            <v-card-title>
-                                <div>
-                                    <span>Dairo José Quintana Olivares</span><br>
-                                    <span class="grey--text">"No al conformismo, sí a la unión, no al voto en blaco, sí a 03"</span><br>
-                                </div>
-                            </v-card-title>
-                            <v-card-actions>
-                                <v-btn color="primary" :disabled="botonV" @click="votoDairo" block large >VOTAR</v-btn>
-                            </v-card-actions>
-                        </v-card>
-                        <v-card class="card-sombra" width="270px">
-                            <v-img class="white--text foto"
-                                   src="https://firebasestorage.googleapis.com/v0/b/votacionescolsam.appspot.com/o/fotos%2F4.png?alt=media&token=80446a3a-aadb-44b1-bbf0-513705c6dd9d">
-                            </v-img>
-                            <v-card-title>
-                                <div>
-                                    <span>Voto en Blanco</span><br>
-                                    <span class="grey--text">"Si no deseas votar por ningun candidato, elige voto en blanco."</span><br>
-                                </div>
-                            </v-card-title>
-                            <v-card-actions>
-                                <v-btn color="primary" :disabled="botonV" @click="votoBlanco" block large >VOTAR</v-btn>
-                            </v-card-actions>
-                        </v-card>
-                        <v-dialog v-model="alertExito" persistent max-width="500px">
-                            <v-card>
-                                <v-card-title>
-                                    <span class="headline text-lg-center text-sm-center">¡Gracias por tu voto!</span>
-                                </v-card-title  >
-                            </v-card>
-                        </v-dialog>
-                        <v-dialog v-model="inicio" persistent max-width="600px">
-                            <v-card>
-                                <v-card-title>
-                                    <span class="headline">Ingresar panel de Administración</span>
-                                </v-card-title>
-                                <v-card-text>
-                                    <v-alert type="error" v-model="errorPass" dismissible>Por favor ingrese una contraseña
-                                        valida.
-                                    </v-alert>
-                                    <v-alert type="error" v-model="errorUser" dismissible>Por favor ingrese un usuario
-                                        valido.
-                                    </v-alert>
-                                    <v-alert type="error" v-model="errorLogin" dismissible>Usuario y/o contraseña
-                                        incorrecta.
-                                    </v-alert>
-                                    <v-container grid-list-md>
-                                        <v-layout wrap>
-                                            <v-flex xs12>
-                                                <v-text-field label="Correo*" v-model="email" required></v-text-field>
-                                            </v-flex>
-                                            <v-flex xs12>
-                                                <v-text-field label="Contraseña*" v-model="pass" type="password" required></v-text-field>
-                                            </v-flex>
-                                        </v-layout>
-                                    </v-container>
-                                    <small>*Campos requeridos</small>
-                                </v-card-text>
-                                <v-card-actions>
-                                    <v-spacer></v-spacer>
-                                    <v-btn color="blue darken-1" flat @click="inicio = false">Cerrar</v-btn>
-                                    <v-btn color="blue darken-1" flat @click="login">Entrar</v-btn>
-                                </v-card-actions>
-                            </v-card>
-                        </v-dialog>
-                    </v-layout>
-                </v-container>
+                </v-tabs>
+
+
             </v-content>
         </v-app>
     </div>
@@ -147,8 +159,16 @@
             errorPass: false,
             errorLogin: false,
             errorDB: false,
-
-
+            tab: null,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            icons: false,
+            centered: true,
+            grow: true,
+            vertical: true,
+            prevIcon: false,
+            nextIcon: false,
+            right: false,
+            tabs: ['Septimo', 'Octavo', 'Noveno','Decimo'],
         }),
         methods: {
             votoJanina: function () {
@@ -234,4 +254,12 @@
 
 <style scoped>
     @import "assets/style.css";
+    .pestana{
+        margin: 190px;
+        background: white;
+    }
+    .tabs{
+        color: white!important;
+        background: #1976d2;
+    }
 </style>

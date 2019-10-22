@@ -8,7 +8,7 @@
                                class="logo" height="66" width="54"></v-img>
                     </v-toolbar-title>
                     <v-toolbar-title class="white--text titulo">
-                        Votaciones Colsam 2019
+                        Triduo de la creatividad Colsam 2019
                     </v-toolbar-title>
                     <v-spacer></v-spacer>
                     <v-btn  flat class="white--text" href="index.html">Salir</v-btn>
