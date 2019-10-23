@@ -55,7 +55,7 @@
                                             </div>
                                         </v-card-title>
                                         <v-card-actions>
-                                            <v-btn color="primary" :disabled="botonV" @click="voto('ruleta')" block large>VOTAR</v-btn>
+                                            <v-btn color="primary" :disabled="botonV" @click="voto('1')" block large>VOTAR</v-btn>
                                         </v-card-actions>
                                     </v-card>
                                     <v-card class="card-sombra" width="270px">
@@ -66,7 +66,7 @@
                                             </div>
                                         </v-card-title>
                                         <v-card-actions>
-                                            <v-btn color="primary" :disabled="botonV" @click="voto('escaleraserpiente')" block large>VOTAR</v-btn>
+                                            <v-btn color="primary" :disabled="botonV" @click="voto('2')" block large>VOTAR</v-btn>
                                         </v-card-actions>
                                     </v-card>
 
@@ -84,7 +84,7 @@
                                             </div>
                                         </v-card-title>
                                         <v-card-actions>
-                                            <v-btn color="primary" :disabled="botonV" @click="voto('brazohidraulico')" block large>VOTAR</v-btn>
+                                            <v-btn color="primary" :disabled="botonV" @click="voto('3')" block large>VOTAR</v-btn>
                                         </v-card-actions>
                                     </v-card>
                                     <v-card class="card-sombra" width="270px">
@@ -95,7 +95,7 @@
                                             </div>
                                         </v-card-title>
                                         <v-card-actions>
-                                            <v-btn color="primary" :disabled="botonV" @click="voto('holograma3d')" block large>VOTAR</v-btn>
+                                            <v-btn color="primary" :disabled="botonV" @click="voto('4')" block large>VOTAR</v-btn>
                                         </v-card-actions>
                                     </v-card>
                                     <v-card class="card-sombra" width="270px">
@@ -106,7 +106,7 @@
                                             </div>
                                         </v-card-title>
                                         <v-card-actions>
-                                            <v-btn color="primary" :disabled="botonV" @click="voto('lamparadelava')" block large>VOTAR</v-btn>
+                                            <v-btn color="primary" :disabled="botonV" @click="voto('5')" block large>VOTAR</v-btn>
                                         </v-card-actions>
                                     </v-card>
                                     <v-card class="card-sombra" width="270px">
@@ -117,7 +117,7 @@
                                             </div>
                                         </v-card-title>
                                         <v-card-actions>
-                                            <v-btn color="primary" :disabled="botonV" @click="voto('lamparadelava')" block large>VOTAR</v-btn>
+                                            <v-btn color="primary" :disabled="botonV" @click="voto('6')" block large>VOTAR</v-btn>
                                         </v-card-actions>
                                     </v-card>
                                     <v-card class="card-sombra" width="270px">
@@ -128,7 +128,7 @@
                                             </div>
                                         </v-card-title>
                                         <v-card-actions>
-                                            <v-btn color="primary" :disabled="botonV" @click="voto('propiavoz')" block large>VOTAR</v-btn>
+                                            <v-btn color="primary" :disabled="botonV" @click="voto('7')" block large>VOTAR</v-btn>
                                         </v-card-actions>
                                     </v-card>
                                 </v-layout>
@@ -230,35 +230,8 @@
             tabs: ['Septimo', 'Octavo', 'Noveno','Decimo'],
         }),
         methods: {
-            votoJanina: function () {
-                let docRef = db.collection("personeros").doc('1001918552');
-                docRef.get().then(doc => {
-                    docRef.update({nrovotos: doc.data().nrovotos + 1});
-                    this.botonV = true;
-                    this.alertExito = true;
-                    setTimeout(this.reinicioVoto, 5000);
-                });
-            },
-            votoDairo: function () {
-                let docRef = db.collection("personeros").doc('1002027132');
-                docRef.get().then(doc => {
-                    docRef.update({nrovotos: doc.data().nrovotos + 1});
-                    this.botonV = true;
-                    this.alertExito = true;
-                    setTimeout(this.reinicioVoto, 5000);
-                });
-            },
-            votoKevin: function () {
-                let docRef = db.collection("personeros").doc('1002031194');
-                docRef.get().then(doc => {
-                    docRef.update({nrovotos: doc.data().nrovotos + 1});
-                    this.botonV = true;
-                    this.alertExito = true;
-                    setTimeout(this.reinicioVoto, 5000);
-                });
-            },
-            votoBlanco: function () {
-                let docRef = db.collection("personeros").doc('PskaWVZqqdhdUfMRbgvf');
+            voto: function (grupo) {
+                let docRef = db.collection("grupos").doc(grupo.toString());
                 docRef.get().then(doc => {
                     docRef.update({nrovotos: doc.data().nrovotos + 1});
                     this.botonV = true;
