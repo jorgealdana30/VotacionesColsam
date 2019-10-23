@@ -1,10 +1,10 @@
 .theme--light.application {
-    background-image: url("https://firebasestorage.googleapis.com/v0/b/colsamapp.appspot.com/o/wall%2Fwall.jpg?alt=media&token=213d4019-019e-42c8-ae32-6cf856f1a6c1")!important;
+    background-image: url("https://wallpaperaccess.com/full/885155.jpg")!important;
     background-size: cover!important;
 }
 
 .card-sombra {
-    box-shadow: 0 0 17px 2px rgba(127, 127, 127, 0.96);
+    box-shadow: 0 0 17px 2px #170505;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -15,4 +15,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+}
+.toolbar{
+    background: #000000!important;
+}
+
+.buttons{
+   background:  #000000!important;
+    color: white!important;
 }

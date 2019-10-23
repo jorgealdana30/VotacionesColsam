@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <v-app>
-            <v-toolbar app color="primary" class="toolbar">
+            <v-toolbar app class="toolbar">
                 <v-toolbar-title class="logoMargin">
                     <v-img src="https://firebasestorage.googleapis.com/v0/b/colsamapp.appspot.com/o/logo%2Flogo.png?alt=media&token=d985d93c-2f39-4758-ba21-07fb86d99401"
                            class="logo" height="66" width="54"></v-img>
@@ -55,7 +55,7 @@
                                             </div>
                                         </v-card-title>
                                         <v-card-actions>
-                                            <v-btn color="primary" :disabled="botonV" @click="voto('1')" block large>
+                                            <v-btn class="buttons" :disabled="botonV" @click="voto('1')" block large>
                                                 VOTAR
                                             </v-btn>
                                         </v-card-actions>
@@ -68,7 +68,7 @@
                                             </div>
                                         </v-card-title>
                                         <v-card-actions>
-                                            <v-btn color="primary" :disabled="botonV" @click="voto('2')" block large>
+                                            <v-btn class="buttons" :disabled="botonV" @click="voto('2')" block large>
                                                 VOTAR
                                             </v-btn>
                                         </v-card-actions>
@@ -88,7 +88,7 @@
                                             </div>
                                         </v-card-title>
                                         <v-card-actions>
-                                            <v-btn color="primary" :disabled="botonV" @click="voto('3')" block large>
+                                            <v-btn class="buttons" :disabled="botonV" @click="voto('3')" block large>
                                                 VOTAR
                                             </v-btn>
                                         </v-card-actions>
@@ -101,7 +101,7 @@
                                             </div>
                                         </v-card-title>
                                         <v-card-actions>
-                                            <v-btn color="primary" :disabled="botonV" @click="voto('4')" block large>
+                                            <v-btn class="buttons" :disabled="botonV" @click="voto('4')" block large>
                                                 VOTAR
                                             </v-btn>
                                         </v-card-actions>
@@ -114,7 +114,7 @@
                                             </div>
                                         </v-card-title>
                                         <v-card-actions>
-                                            <v-btn color="primary" :disabled="botonV" @click="voto('5')" block large>
+                                            <v-btn class="buttons" :disabled="botonV" @click="voto('5')" block large>
                                                 VOTAR
                                             </v-btn>
                                         </v-card-actions>
@@ -127,7 +127,7 @@
                                             </div>
                                         </v-card-title>
                                         <v-card-actions>
-                                            <v-btn color="primary" :disabled="botonV" @click="voto('6')" block large>
+                                            <v-btn class="buttons" :disabled="botonV" @click="voto('6')" block large>
                                                 VOTAR
                                             </v-btn>
                                         </v-card-actions>
@@ -140,7 +140,7 @@
                                             </div>
                                         </v-card-title>
                                         <v-card-actions>
-                                            <v-btn color="primary" :disabled="botonV" @click="voto('7')" block large>
+                                            <v-btn class="buttons" :disabled="botonV" @click="voto('7')" block large>
                                                 VOTAR
                                             </v-btn>
                                         </v-card-actions>
@@ -159,7 +159,7 @@
                                             </div>
                                         </v-card-title>
                                         <v-card-actions>
-                                            <v-btn color="primary" :disabled="botonV" @click="voto('3')" block large>
+                                            <v-btn class="buttons" :disabled="botonV" @click="voto('3')" block large>
                                                 VOTAR
                                             </v-btn>
                                         </v-card-actions>
@@ -172,7 +172,7 @@
                                             </div>
                                         </v-card-title>
                                         <v-card-actions>
-                                            <v-btn color="primary" :disabled="botonV" @click="voto('3')" block large>
+                                            <v-btn class="buttons" :disabled="botonV" @click="voto('3')" block large>
                                                 VOTAR
                                             </v-btn>
                                         </v-card-actions>
@@ -192,7 +192,7 @@
                                             </div>
                                         </v-card-title>
                                         <v-card-actions>
-                                            <v-btn color="primary" :disabled="botonV" @click="voto('3')" block large>
+                                            <v-btn class="buttons" :disabled="botonV" @click="voto('3')" block large>
                                                 VOTAR
                                             </v-btn>
                                         </v-card-actions>
@@ -349,7 +349,6 @@
 
     .pestana {
         position: relative;
-        background: white;
         top: 20%;
         margin-right: 50px;
         margin-left: 50px;
@@ -357,6 +356,6 @@
 
     .tabs {
         color: white !important;
-        background: #1976d2;
+        background: #000000;
     }
 </style>
