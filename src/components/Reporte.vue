@@ -15,7 +15,7 @@
                 </v-toolbar>
                 <v-content>
                 <v-container offset-sm3>
-                    <v-card dark class="card-sombra" width="100%" height="90%">
+                    <v-card dark class="card-sombra2">
                         <v-card-title>
                             <div>
                                 <span>Conteo de votos en tiempo real</span><br>
@@ -23,7 +23,7 @@
                             </div>
                         </v-card-title>
                         <v-card-actions>
-                            <apexchart type=bar width="1100" height=350 :options="chartOptions" :series="series" />
+                            <apexchart type=bar class="apex" :options="chartOptions" :series="series" />
                         </v-card-actions>
                     </v-card>
                 </v-container>
@@ -48,7 +48,7 @@
     let app =firebase.initializeApp(config);
     let db = firebase.firestore(app);
     Vue.component('apexchart',VueApexCharts);
-    var colors = ['#008FFB', '#00E396', '#FEB019', '#FF4560', '#775DD0', '#546E7A', '#26a69a', '#D10CE8'];
+    let colors = ['#008FFB', '#00E396', '#FEB019', '#fffb54', '#775DD0', '#546E7A', '#26a69a', '#D10CE8', '#558b2f', '#ff7043'];
 
     export default {
         name: "Reporte",
@@ -78,14 +78,15 @@
                         bar: {
                             columnWidth: '50%',
                             distributed: true,
-                            animate:false
+                            animate:true
                         }
                     },
                     dataLabels: {
                         enabled: true,
                     },
                     xaxis: {
-                        categories: ['Janinna', 'Kevin', 'Dairo', 'Voto Blanco'],
+                        categories: ['Grupo #1', 'Grupo #2', 'Grupo #3', 'Grupo #4','Grupo #5', 'Grupo #6', 'Grupo #7', 'Grupo #8'
+                            ,'Grupo #9', 'Grupo #10'],
                         labels: {
                             style: {
                                 colors: colors,
@@ -101,27 +102,15 @@
         },
         methods: {
             transfer: function(){
-                setInterval(this.actualizar, 3000);
+                setInterval(this.actualizar, 10000);
             },
             actualizar: function () {
                 this.series[0].data=[];
-                let docRef = db.collection("personeros").doc("1001918552");
-                docRef.get().then(doc =>{
-                    this.series[0].data.push(doc.data().nrovotos);
-                });
-                let docRef1 = db.collection("personeros").doc("1002031194");
-                docRef1.get().then(doc =>{
-                    this.series[0].data.push(doc.data().nrovotos);
-                });
-                let docRef2 = db.collection("personeros").doc("1002027132");
-                docRef2.get().then(doc =>{
-                    this.series[0].data.push(doc.data().nrovotos);
-                });
-                let docRef3 = db.collection("personeros").doc("PskaWVZqqdhdUfMRbgvf");
-                docRef3.get().then(doc =>{
-                    this.series[0].data.push(doc.data().nrovotos);
-                });
-
+                for(let i = 1; i<=this.chartOptions.xaxis.categories.length; i++){
+                    db.collection("grupos").doc(i.toString()).get().then(doc =>{
+                        this.series[0].data.push(doc.data().nrovotos);
+                    });
+                }
             }
         }
     }
@@ -129,4 +118,8 @@
 
 <style scoped>
     @import "../assets/style.css";
+    .apex{
+        width: 1080px;
+    }
+
 </style>

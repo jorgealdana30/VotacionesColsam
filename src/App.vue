@@ -10,7 +10,7 @@
                     Triduo de la creatividad Colsam 2019
                 </v-toolbar-title>
                 <v-spacer></v-spacer>
-                <v-btn  flat class="white--text" @click="inicio = true">Conteo de Votos</v-btn>
+                <v-btn flat class="white--text" @click="inicio = true">Conteo de Votos</v-btn>
             </v-toolbar>
             <v-content>
                 <v-tabs
@@ -27,19 +27,19 @@
                         :icons-and-text="icons"
                 >
                     <v-tabs-slider></v-tabs-slider>
-                    <v-tab class="tabs" >
-                       Septimo
+                    <v-tab class="tabs">
+                        Septimo
                         <v-icon v-if="icons">mdi-phone</v-icon>
                     </v-tab>
-                    <v-tab class="tabs" >
+                    <v-tab class="tabs">
                         Octavo
                         <v-icon v-if="icons">mdi-phone</v-icon>
                     </v-tab>
-                    <v-tab class="tabs" >
+                    <v-tab class="tabs">
                         Noveno
                         <v-icon v-if="icons">mdi-phone</v-icon>
                     </v-tab>
-                    <v-tab class="tabs" >
+                    <v-tab class="tabs">
                         Decimo
                         <v-icon v-if="icons">mdi-phone</v-icon>
                     </v-tab>
@@ -55,7 +55,9 @@
                                             </div>
                                         </v-card-title>
                                         <v-card-actions>
-                                            <v-btn color="primary" :disabled="botonV" @click="voto('1')" block large>VOTAR</v-btn>
+                                            <v-btn color="primary" :disabled="botonV" @click="voto('1')" block large>
+                                                VOTAR
+                                            </v-btn>
                                         </v-card-actions>
                                     </v-card>
                                     <v-card class="card-sombra" width="270px">
@@ -66,7 +68,9 @@
                                             </div>
                                         </v-card-title>
                                         <v-card-actions>
-                                            <v-btn color="primary" :disabled="botonV" @click="voto('2')" block large>VOTAR</v-btn>
+                                            <v-btn color="primary" :disabled="botonV" @click="voto('2')" block large>
+                                                VOTAR
+                                            </v-btn>
                                         </v-card-actions>
                                     </v-card>
 
@@ -84,7 +88,9 @@
                                             </div>
                                         </v-card-title>
                                         <v-card-actions>
-                                            <v-btn color="primary" :disabled="botonV" @click="voto('3')" block large>VOTAR</v-btn>
+                                            <v-btn color="primary" :disabled="botonV" @click="voto('3')" block large>
+                                                VOTAR
+                                            </v-btn>
                                         </v-card-actions>
                                     </v-card>
                                     <v-card class="card-sombra" width="270px">
@@ -95,7 +101,9 @@
                                             </div>
                                         </v-card-title>
                                         <v-card-actions>
-                                            <v-btn color="primary" :disabled="botonV" @click="voto('4')" block large>VOTAR</v-btn>
+                                            <v-btn color="primary" :disabled="botonV" @click="voto('4')" block large>
+                                                VOTAR
+                                            </v-btn>
                                         </v-card-actions>
                                     </v-card>
                                     <v-card class="card-sombra" width="270px">
@@ -106,7 +114,9 @@
                                             </div>
                                         </v-card-title>
                                         <v-card-actions>
-                                            <v-btn color="primary" :disabled="botonV" @click="voto('5')" block large>VOTAR</v-btn>
+                                            <v-btn color="primary" :disabled="botonV" @click="voto('5')" block large>
+                                                VOTAR
+                                            </v-btn>
                                         </v-card-actions>
                                     </v-card>
                                     <v-card class="card-sombra" width="270px">
@@ -117,7 +127,9 @@
                                             </div>
                                         </v-card-title>
                                         <v-card-actions>
-                                            <v-btn color="primary" :disabled="botonV" @click="voto('6')" block large>VOTAR</v-btn>
+                                            <v-btn color="primary" :disabled="botonV" @click="voto('6')" block large>
+                                                VOTAR
+                                            </v-btn>
                                         </v-card-actions>
                                     </v-card>
                                     <v-card class="card-sombra" width="270px">
@@ -128,20 +140,67 @@
                                             </div>
                                         </v-card-title>
                                         <v-card-actions>
-                                            <v-btn color="primary" :disabled="botonV" @click="voto('7')" block large>VOTAR</v-btn>
+                                            <v-btn color="primary" :disabled="botonV" @click="voto('7')" block large>
+                                                VOTAR
+                                            </v-btn>
                                         </v-card-actions>
                                     </v-card>
                                 </v-layout>
                             </v-container>
                         </v-tab-item>
                         <v-tab-item>
-                            jjjjj
+                            <v-container fluid grid-list-md offset-sm3>
+                                <v-layout justify-center justify-space-around>
+                                    <v-card class="card-sombra" width="270px">
+                                        <v-card-title>
+                                            <div>
+                                                <h2>Brazo Hidráulico Grupo #3</h2><br>
+                                                <span class="grey--text">Integrantes: <ul><li>Teran</li><li>Montenegro</li><li>H. Jimenez</li></ul></span><br>
+                                            </div>
+                                        </v-card-title>
+                                        <v-card-actions>
+                                            <v-btn color="primary" :disabled="botonV" @click="voto('3')" block large>
+                                                VOTAR
+                                            </v-btn>
+                                        </v-card-actions>
+                                    </v-card>
+                                    <v-card class="card-sombra" width="270px">
+                                        <v-card-title>
+                                            <div>
+                                                <h2>Brazo Hidráulico Grupo #3</h2><br>
+                                                <span class="grey--text">Integrantes: <ul><li>Teran</li><li>Montenegro</li><li>H. Jimenez</li></ul></span><br>
+                                            </div>
+                                        </v-card-title>
+                                        <v-card-actions>
+                                            <v-btn color="primary" :disabled="botonV" @click="voto('3')" block large>
+                                                VOTAR
+                                            </v-btn>
+                                        </v-card-actions>
+                                    </v-card>
+
+                                </v-layout>
+                            </v-container>
                         </v-tab-item>
                         <v-tab-item>
-                            hjfgjfgjfgjfgj
+                            <v-container fluid grid-list-md offset-sm3>
+                                <v-layout justify-center justify-space-around>
+                                    <v-card class="card-sombra" width="270px">
+                                        <v-card-title>
+                                            <div>
+                                                <h2>Brazo Hidráulico Grupo #3</h2><br>
+                                                <span class="grey--text">Integrantes: <ul><li>Teran</li><li>Montenegro</li><li>H. Jimenez</li></ul></span><br>
+                                            </div>
+                                        </v-card-title>
+                                        <v-card-actions>
+                                            <v-btn color="primary" :disabled="botonV" @click="voto('3')" block large>
+                                                VOTAR
+                                            </v-btn>
+                                        </v-card-actions>
+                                    </v-card>
+                                </v-layout>
+                            </v-container>
                         </v-tab-item>
                     </v-tabs-items>
-
                 </v-tabs>
 
 
@@ -150,7 +209,7 @@
                 <v-card>
                     <v-card-title>
                         <span class="headline text-lg-center text-sm-center">¡Gracias por tu voto!</span>
-                    </v-card-title  >
+                    </v-card-title>
                 </v-card>
             </v-dialog>
             <v-dialog v-model="inicio" persistent max-width="600px">
@@ -174,7 +233,8 @@
                                     <v-text-field label="Correo*" v-model="email" required></v-text-field>
                                 </v-flex>
                                 <v-flex xs12>
-                                    <v-text-field label="Contraseña*" v-model="pass" type="password" required></v-text-field>
+                                    <v-text-field label="Contraseña*" v-model="pass" type="password"
+                                                  required></v-text-field>
                                 </v-flex>
                             </v-layout>
                         </v-container>
@@ -202,7 +262,7 @@
         storageBucket: "",
         messagingSenderId: "1035804809043"
     };
-    let app =firebase.initializeApp(config);
+    let app = firebase.initializeApp(config);
     let db = firebase.firestore(app);
     export default {
         name: 'app',
@@ -227,7 +287,7 @@
             prevIcon: false,
             nextIcon: false,
             right: false,
-            tabs: ['Septimo', 'Octavo', 'Noveno','Decimo'],
+            tabs: ['Septimo', 'Octavo', 'Noveno', 'Decimo'],
         }),
         methods: {
             voto: function (grupo) {
@@ -286,15 +346,17 @@
 
 <style scoped>
     @import "assets/style.css";
-    .pestana{
+
+    .pestana {
         position: relative;
         background: white;
         top: 20%;
         margin-right: 50px;
         margin-left: 50px;
     }
-    .tabs{
-        color: white!important;
+
+    .tabs {
+        color: white !important;
         background: #1976d2;
     }
 </style>
