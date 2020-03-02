@@ -8,7 +8,7 @@
                                class="logo" height="66" width="54"></v-img>
                     </v-toolbar-title>
                     <v-toolbar-title class="white--text titulo">
-                        Triduo de la creatividad Colsam 2019
+                        Votaciones Personeria 2020
                     </v-toolbar-title>
                     <v-spacer></v-spacer>
                     <v-btn  flat class="white--text" href="index.html">Salir</v-btn>
@@ -48,7 +48,7 @@
     let app =firebase.initializeApp(config);
     let db = firebase.firestore(app);
     Vue.component('apexchart',VueApexCharts);
-    let colors = ['#008FFB', '#00E396', '#FEB019', '#fffb54', '#775DD0', '#546E7A', '#26a69a', '#D10CE8', '#558b2f', '#ff7043'];
+    let colors = ['#008FFB', '#00E396', '#FEB019', '#FFFFFF'];
 
     export default {
         name: "Reporte",
@@ -85,8 +85,7 @@
                         enabled: true,
                     },
                     xaxis: {
-                        categories: ['Grupo #1', 'Grupo #2', 'Grupo #3', 'Grupo #4','Grupo #5', 'Grupo #6', 'Grupo #7', 'Grupo #8'
-                            ,'Grupo #9', 'Grupo #10'],
+                        categories: ['Ingrid', 'Jesús', 'María', 'Blanco'],
                         labels: {
                             style: {
                                 colors: colors,
@@ -107,7 +106,7 @@
             actualizar: function () {
                 this.series[0].data=[];
                 for(let i = 1; i<=this.chartOptions.xaxis.categories.length; i++){
-                    db.collection("grupos").doc(i.toString()).get().then(doc =>{
+                    db.collection("personeros").doc(i.toString()).get().then(doc =>{
                         this.series[0].data.push(doc.data().nrovotos);
                     });
                 }

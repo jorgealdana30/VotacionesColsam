@@ -7,201 +7,73 @@
                            class="logo" height="66" width="54"></v-img>
                 </v-toolbar-title>
                 <v-toolbar-title class="white--text titulo">
-                    Triduo de la creatividad Colsam 2019
+                    Votaciones Personería 2020
                 </v-toolbar-title>
                 <v-spacer></v-spacer>
                 <v-btn flat class="white--text" @click="inicio = true">Conteo de Votos</v-btn>
             </v-toolbar>
             <v-content>
-                <v-tabs
-                        v-model="tab"
-                        color="white"
-                        background-color="deep-purple accent-4"
-                        class="elevation-2 pestana"
-                        :centered="centered"
-                        :grow="grow"
-                        :vertical="vertical"
-                        :right="right"
-                        :prev-icon="prevIcon ? 'mdi-arrow-left-bold-box-outline' : undefined"
-                        :next-icon="nextIcon ? 'mdi-arrow-right-bold-box-outline' : undefined"
-                        :icons-and-text="icons"
-                >
-                    <v-tabs-slider></v-tabs-slider>
-                    <v-tab class="tabs">
-                        Septimo
-                        <v-icon v-if="icons">mdi-phone</v-icon>
-                    </v-tab>
-                    <v-tab class="tabs">
-                        Octavo
-                        <v-icon v-if="icons">mdi-phone</v-icon>
-                    </v-tab>
-                    <v-tab class="tabs">
-                        Noveno
-                        <v-icon v-if="icons">mdi-phone</v-icon>
-                    </v-tab>
-                    <v-tab class="tabs">
-                        Decimo
-                        <v-icon v-if="icons">mdi-phone</v-icon>
-                    </v-tab>
-                    <v-tabs-items>
-                        <v-tab-item>
-                            <v-container fluid grid-list-md offset-sm3>
-                                <v-layout justify-center justify-space-around>
-                                    <v-card class="card-sombra" width="270px">
-                                        <v-card-title>
-                                            <div>
-                                                <h2>Ruleta Grupo #1</h2><br>
-                                                <span class="grey--text">Integrantes: <ul><li>Alvarez</li><li>Ramirez</li><li>Quintana</li><li>García</li></ul></span><br>
-                                            </div>
-                                        </v-card-title>
-                                        <v-card-actions>
-                                            <v-btn class="buttons" :disabled="botonV" @click="voto('1')" block large>
-                                                VOTAR
-                                            </v-btn>
-                                        </v-card-actions>
-                                    </v-card>
-                                    <v-card class="card-sombra" width="270px">
-                                        <v-card-title>
-                                            <div>
-                                                <h2>Escalera y Serpiente Grupo #2</h2><br>
-                                                <span class="grey--text">Integrantes:<ul><li>Peña</li><li>Berrio</li><li>Meza</li></ul></span><br>
-                                            </div>
-                                        </v-card-title>
-                                        <v-card-actions>
-                                            <v-btn class="buttons" :disabled="botonV" @click="voto('2')" block large>
-                                                VOTAR
-                                            </v-btn>
-                                        </v-card-actions>
-                                    </v-card>
+                <v-container fluid grid-list-md offset-sm3>
+                    <v-layout justify-center justify-space-around >
+                        <v-card class="card-sombra" width="270px">
+                            <v-card-title>
+                                <div>
+                                    <h2>Ingrid Jimena Trujillo Benavidez</h2><br>
+                                    <v-img src="https://firebasestorage.googleapis.com/v0/b/votacionescolsam.appspot.com/o/fotos%2F1.jpeg?alt=media&token=c0c1c97e-8c75-4f9a-9eb4-0bda5a2c78b5"></v-img>
+                                    <span class="grey--text">Las oportunidades no ocurren, tu las creas.</span><br>
+                                </div>
+                            </v-card-title>
+                            <v-card-actions>
+                                <v-btn class="buttons" :disabled="botonV" @click="voto('1')" block large>
+                                    VOTAR
+                                </v-btn>
+                            </v-card-actions>
+                        </v-card>
+                        <v-card class="card-sombra" width="270px">
+                            <v-card-title>
+                                <div>
+                                    <h2>Jesús Manual Robayo Pérez</h2><br>
+                                    <v-img src="https://firebasestorage.googleapis.com/v0/b/votacionescolsam.appspot.com/o/fotos%2F2.jpeg?alt=media&token=686ec83e-c56e-4c81-b0da-228470e26827"></v-img>
+                                    <span class="grey--text">No puedes cambiar el pasado pero sí aprender de él para escribir un futuro.</span><br>
+                                </div>
+                            </v-card-title>
+                            <v-card-actions>
+                                <v-btn class="buttons" :disabled="botonV" @click="voto('2')" block large>
+                                    VOTAR
+                                </v-btn>
+                            </v-card-actions>
+                        </v-card>
+                        <v-card class="card-sombra" width="270px">
+                            <v-card-title>
+                                <div>
+                                    <h2>María Fernanda Velásquez García</h2><br>
+                                    <v-img src="https://firebasestorage.googleapis.com/v0/b/votacionescolsam.appspot.com/o/fotos%2F3.jpeg?alt=media&token=de0067c6-754e-4d23-af20-80be56fc8fc1"></v-img>
+                                    <span class="grey--text">Doy el primer paso, para que juntos demos el segundo.</span><br>
+                                </div>
+                            </v-card-title>
+                            <v-card-actions>
+                                <v-btn class="buttons" :disabled="botonV" @click="voto('3')" block large>
+                                    VOTAR
+                                </v-btn>
+                            </v-card-actions>
+                        </v-card>
+                        <v-card class="card-sombra" width="270px">
+                            <v-card-title>
+                                <div>
+                                    <h2>Voto en blanco</h2><br>
+                                    <v-img src="https://firebasestorage.googleapis.com/v0/b/votacionescolsam.appspot.com/o/fotos%2F4.png?alt=media&token=80446a3a-aadb-44b1-bbf0-513705c6dd9d"></v-img>
+                                    <span class="grey--text" style="color: white">Voto en blanco.</span><br>
+                                </div>
+                            </v-card-title>
+                            <v-card-actions>
+                                <v-btn class="buttons" :disabled="botonV" @click="voto('4')" block large>
+                                    VOTAR
+                                </v-btn>
+                            </v-card-actions>
+                        </v-card>
 
-                                </v-layout>
-                            </v-container>
-                        </v-tab-item>
-                        <v-tab-item>
-                            <v-container fluid grid-list-md offset-sm3>
-                                <v-layout justify-center justify-space-around>
-                                    <v-card class="card-sombra" width="270px">
-                                        <v-card-title>
-                                            <div>
-                                                <h2>Brazo Hidráulico Grupo #3</h2><br>
-                                                <span class="grey--text">Integrantes: <ul><li>Teran</li><li>Montenegro</li><li>H. Jimenez</li></ul></span><br>
-                                            </div>
-                                        </v-card-title>
-                                        <v-card-actions>
-                                            <v-btn class="buttons" :disabled="botonV" @click="voto('3')" block large>
-                                                VOTAR
-                                            </v-btn>
-                                        </v-card-actions>
-                                    </v-card>
-                                    <v-card class="card-sombra" width="270px">
-                                        <v-card-title>
-                                            <div>
-                                                <h2>Holograma 3D <br>Grupo #4</h2><br>
-                                                <span class="grey--text">Integrantes:<ul><li>Vera</li><li>Llanos</li><li>García</li></ul></span><br>
-                                            </div>
-                                        </v-card-title>
-                                        <v-card-actions>
-                                            <v-btn class="buttons" :disabled="botonV" @click="voto('4')" block large>
-                                                VOTAR
-                                            </v-btn>
-                                        </v-card-actions>
-                                    </v-card>
-                                    <v-card class="card-sombra" width="270px">
-                                        <v-card-title>
-                                            <div>
-                                                <h2>Lámpara de lava <br>Grupo #5</h2><br>
-                                                <span class="grey--text">Integrantes:<ul><li>Santíz</li><li>Herrera</li></ul></span><br>
-                                            </div>
-                                        </v-card-title>
-                                        <v-card-actions>
-                                            <v-btn class="buttons" :disabled="botonV" @click="voto('5')" block large>
-                                                VOTAR
-                                            </v-btn>
-                                        </v-card-actions>
-                                    </v-card>
-                                    <v-card class="card-sombra" width="270px">
-                                        <v-card-title>
-                                            <div>
-                                                <h2>Moldeación de la materia <br>Grupo #6</h2><br>
-                                                <span class="grey--text">Integrantes:<ul><li>Pardo</li><li>Escobar</li><li>C. Acosta</li><li>Sampayo</li></ul></span><br>
-                                            </div>
-                                        </v-card-title>
-                                        <v-card-actions>
-                                            <v-btn class="buttons" :disabled="botonV" @click="voto('6')" block large>
-                                                VOTAR
-                                            </v-btn>
-                                        </v-card-actions>
-                                    </v-card>
-                                    <v-card class="card-sombra" width="270px">
-                                        <v-card-title>
-                                            <div>
-                                                <h2>Ver tu propia voz <br>Grupo #7</h2><br>
-                                                <span class="grey--text">Integrantes:<ul><li>Parra</li><li>Rivera</li><li>Ospino</li></ul></span><br>
-                                            </div>
-                                        </v-card-title>
-                                        <v-card-actions>
-                                            <v-btn class="buttons" :disabled="botonV" @click="voto('7')" block large>
-                                                VOTAR
-                                            </v-btn>
-                                        </v-card-actions>
-                                    </v-card>
-                                </v-layout>
-                            </v-container>
-                        </v-tab-item>
-                        <v-tab-item>
-                            <v-container fluid grid-list-md offset-sm3>
-                                <v-layout justify-center justify-space-around>
-                                    <v-card class="card-sombra" width="270px">
-                                        <v-card-title>
-                                            <div>
-                                                <h2>Brazo Hidráulico Grupo #3</h2><br>
-                                                <span class="grey--text">Integrantes: <ul><li>Teran</li><li>Montenegro</li><li>H. Jimenez</li></ul></span><br>
-                                            </div>
-                                        </v-card-title>
-                                        <v-card-actions>
-                                            <v-btn class="buttons" :disabled="botonV" @click="voto('3')" block large>
-                                                VOTAR
-                                            </v-btn>
-                                        </v-card-actions>
-                                    </v-card>
-                                    <v-card class="card-sombra" width="270px">
-                                        <v-card-title>
-                                            <div>
-                                                <h2>Brazo Hidráulico Grupo #3</h2><br>
-                                                <span class="grey--text">Integrantes: <ul><li>Teran</li><li>Montenegro</li><li>H. Jimenez</li></ul></span><br>
-                                            </div>
-                                        </v-card-title>
-                                        <v-card-actions>
-                                            <v-btn class="buttons" :disabled="botonV" @click="voto('3')" block large>
-                                                VOTAR
-                                            </v-btn>
-                                        </v-card-actions>
-                                    </v-card>
-
-                                </v-layout>
-                            </v-container>
-                        </v-tab-item>
-                        <v-tab-item>
-                            <v-container fluid grid-list-md offset-sm3>
-                                <v-layout justify-center justify-space-around>
-                                    <v-card class="card-sombra" width="270px">
-                                        <v-card-title>
-                                            <div>
-                                                <h2>Brazo Hidráulico Grupo #3</h2><br>
-                                                <span class="grey--text">Integrantes: <ul><li>Teran</li><li>Montenegro</li><li>H. Jimenez</li></ul></span><br>
-                                            </div>
-                                        </v-card-title>
-                                        <v-card-actions>
-                                            <v-btn class="buttons" :disabled="botonV" @click="voto('3')" block large>
-                                                VOTAR
-                                            </v-btn>
-                                        </v-card-actions>
-                                    </v-card>
-                                </v-layout>
-                            </v-container>
-                        </v-tab-item>
-                    </v-tabs-items>
-                </v-tabs>
+                    </v-layout>
+                </v-container>
 
 
             </v-content>
@@ -287,11 +159,10 @@
             prevIcon: false,
             nextIcon: false,
             right: false,
-            tabs: ['Septimo', 'Octavo', 'Noveno', 'Decimo'],
         }),
         methods: {
-            voto: function (grupo) {
-                let docRef = db.collection("grupos").doc(grupo.toString());
+            voto: function (personero) {
+                let docRef = db.collection("personeros").doc(personero.toString());
                 docRef.get().then(doc => {
                     docRef.update({nrovotos: doc.data().nrovotos + 1});
                     this.botonV = true;
