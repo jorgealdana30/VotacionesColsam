@@ -26,7 +26,7 @@
     "vue-cli-plugin-vuetify": "^0.5.0",
     "vue-template-compiler": "^2.5.21",
     "vuetify-loader": "^1.0.5",
-    "grpc": "^1.24.2"
+    "grpc": "^1.24.9"
   },
   "eslintConfig": {
     "root": true,
